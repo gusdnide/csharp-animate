@@ -5,15 +5,23 @@ using actions.
 
 Example taken from animate_testing:
 
-    DoubleAnimation animation = new Animate.DoubleAnimation();
-    animation.Duration = TimeSpan.FromMilliseconds(3000);
+    Animate.DoubleAnimation animation = new Animate.DoubleAnimation();
+    animation.Duration = TimeSpan.FromMilliseconds(2000);
     animation.From = 0;
-    animation.To = 10;
+    animation.To = 30;
+    animation.EasingFunction = new BackEase() { Amplitude = 10 };
     animation.UpdateAction = new Action<double>((double value) =>
     {
-        Console.WriteLine(value);
+        Console.Clear();
+        for(int j = 0; j < 5; j++)
+        {
+            for (int i = 0; i < value; i++)
+            {
+                Console.Write("#");
+            }
+            Console.WriteLine();
+        }
     });
-
     animation.BeginAnimation();
     
     
