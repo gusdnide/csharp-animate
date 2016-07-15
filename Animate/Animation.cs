@@ -49,6 +49,9 @@ namespace Animate
             if (Duration.TotalMilliseconds <= 0)
                 throw new InvalidOperationException("You need a duration greater than 0 seconds.");
 
+            if (EasingFunction.CanFreeze)
+                EasingFunction.Freeze();
+
             AnimationFactory.BeginAnimation(this);
         }
     }

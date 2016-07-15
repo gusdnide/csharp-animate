@@ -36,6 +36,7 @@
     <Reference Include="Animate">
       <HintPath>..\Animate\bin\Debug\Animate.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
